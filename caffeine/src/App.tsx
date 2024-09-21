@@ -2,13 +2,17 @@ import Header from "./components/Header/Header"
 import styled, { createGlobalStyle } from 'styled-components'
 import img from './assets/coffeeImage.png'
 import coffee from './assets/coffeeBeans.png'
+import coffeeMenu1 from './assets/Cappuccino.svg'
+import coffeeMenu2 from './assets/ChaiLatte.svg'
+import coffeeMenu3 from './assets/Macchiato.svg'
+import coffeeMenu4 from './assets/Expresso.svg'
 
-// const coffies = [
-//   { id: 1, title: 'Cappuccino', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu1 },
-//   { id: 2, title: 'Chai Latte', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu2 },
-//   { id: 3, title: 'Macchiato', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu3 },
-//   { id: 4, title: 'Expresso', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu4 },
-// ];
+const coffies = [
+  { id: 1, title: 'Cappuccino', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu1 },
+  { id: 2, title: 'Chai Latte', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu2 },
+  { id: 3, title: 'Macchiato', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu3 },
+  { id: 4, title: 'Expresso', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu4 },
+];
 
 const Global = createGlobalStyle`
   * {
@@ -62,39 +66,157 @@ const BackgroundPreview = styled.div`
       text-align: left;
       color: #FFFFFF;
     }
-    
-  }
 
+    .button {
+      background: #F9C06A;
+      padding: 14px 27px;
+      border-radius: 24px;
+      color: #1E1E1E;
+      max-width: 134px;
+    }
+  }
   
   `
 const CoffeeDiscovery = styled.div`
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1180px;
+      margin: auto;
+      gap: 90px;
+
+  .content {
     display: flex;
+    flex-direction: column;
+    gap: 29px;
+
+    h2 {
+      font-family: Playfair Display;
+      font-size: 54px;
+      font-weight: 700;
+      color: #603809;
+    }
+    p {
+      font-family: Playfair Display;
+      font-size: 20px;
+      font-weight: 400;
+      color: #707070;
+
+
+    }
+
+    .button {
+      background: #F9C06A;
+      padding: 14px 27px;
+      border-radius: 24px;
+      color: #1E1E1E;
+      max-width: 134px;
+    }
+    
+  }
+`
+
+const MenuList = styled.div`
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    max-width: 1180px;
-    margin: auto;
-    gap: 90px;
-.content{
-  display: flex;
-  flex-direction: column;
-  gap: 29px;
+    /* max-width: 1180px; */
+    margin: 82px auto 0;
+    gap: 24px;
+
   h2 {
+    /* max-width: 527px; */
     font-family: Playfair Display;
     font-size: 54px;
     font-weight: 700;
     color: #603809;
   }
-  p{
+
+  p {
     font-family: Playfair Display;
     font-size: 20px;
     font-weight: 400;
     color: #707070;
-
-
+    /* max-width: 527px; */
   }
+  .content {
+    display: flex;
+    flex-wrap:wrap;
+    gap: 20px;
+  }
+  .menu_card {
+    border: 1px solid #F9C06A6B;
+    max-width: 280px;
+    height:364px;
+    text-align: center;
+    background: #FFF9F1;
 
-}
-`
+
+    .coffeeMenu1 {
+      background-image: url(${coffeeMenu1});
+      width: 280px;
+      height: 222px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .coffeeMenu2 {
+      background-image: url(${coffeeMenu2});
+      width: 280px;
+      height: 222px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .coffeeMenu3 {
+      background-image: url(${coffeeMenu3});
+      width: 280px;
+      height: 222px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .coffeeMenu4 {
+      background-image: url(${coffeeMenu4});
+      width: 280px;
+      height: 222px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    h3 {
+      font-family: Playfair Display;
+      font-size: 22px;
+      font-weight: 700;
+      color: #603809;
+      margin-top: 14px;
+    }
+
+    .description {
+      font-family: Playfair Display;
+      font-size: 16px;
+      font-weight: 400;
+      color: #1E1E1E;
+      margin: 6px auto;
+    }
+
+    .price {
+      font-family: Playfair Display;
+      font-size: 18px;
+      font-weight: 700;
+      color: #603809;
+    }
+    .btn_order {
+      background: #F9C06A;
+      padding: 14px 27px;
+      border-radius: 24px;
+      color: #1E1E1E;
+      max-width: 135px;
+      margin: 18px auto 82px;
+      font-family: Playfair Display;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+  `
+
 const App = () => {
 
 
@@ -114,29 +236,35 @@ const App = () => {
     </BackgroundPreview>
 
     <CoffeeDiscovery>
-        <div className="content">
-          <h2>Discover the best coffee</h2>
-          <p>
-            Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a
-            cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you
-            have ever tasted.
-          </p>
-          <button className="button">Order Now</button>
-        </div>
-        <div>
-          <img src={coffee} alt="coffee" />
-        </div>
-      </CoffeeDiscovery>
+      <div className="content">
+        <h2>Discover the best coffee</h2>
+        <p>
+          Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a
+          cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you
+          have ever tasted.
+        </p>
+        <button className="button">Learn More</button>
+      </div>
+      <div>
+        <img src={coffee} alt="coffee" />
+      </div>
+    </CoffeeDiscovery>
 
-    <div className="menu">
+    <MenuList>
       <h2>Enjoy a new blend of coffee style</h2>
       <p>Explore all flavours of coffee with us. There is always a new cup worth experiencing.</p>
       <div className="content">
-        {/* {coffies.map(el => (
-          
-        ))} */}
+        {coffies.map((el) =>
+          <div className="menu_card" key={el.id}>
+            <img src={el.img} alt="" />
+            <h3>{el.title}</h3>
+            <p className="description">{el.description}</p>
+            <p className="price">{el.price}</p>
+            <button className="btn_order">Order Now</button>
+          </div>
+        )}
       </div>
-    </div>
+    </MenuList>
 
   </>
 
