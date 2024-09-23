@@ -6,12 +6,23 @@ import coffeeMenu1 from './assets/Cappuccino.svg'
 import coffeeMenu2 from './assets/ChaiLatte.svg'
 import coffeeMenu3 from './assets/Macchiato.svg'
 import coffeeMenu4 from './assets/Expresso.svg'
+import coffee_beans from './assets/coffeeBeans.svg'
+import badge from './assets/badge.svg'
+import coffee_cup from './assets/coffeeCup.svg'
+import best_price from './assets/bestPrice.svg'
 
 const coffies = [
   { id: 1, title: 'Cappuccino', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu1 },
   { id: 2, title: 'Chai Latte', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu2 },
   { id: 3, title: 'Macchiato', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu3 },
   { id: 4, title: 'Expresso', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu4 },
+];
+
+const advantages = [
+  { id: 1, title: 'Supreme Beans', description: 'Beans that provides great taste', icon: coffee_beans },
+  { id: 2, title: 'High Quality', description: 'We provide the highest quality', icon: badge },
+  { id: 3, title: 'Extraordinary', description: 'Coffee like you have never tasted', icon: coffee_cup },
+  { id: 4, title: 'Affordable Price', description: 'Our Coffee prices are easy to afford', icon: best_price },
 ];
 
 const Global = createGlobalStyle`
@@ -121,12 +132,10 @@ const MenuList = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* max-width: 1180px; */
     margin: 82px auto 0;
     gap: 24px;
 
   h2 {
-    /* max-width: 527px; */
     font-family: Playfair Display;
     font-size: 54px;
     font-weight: 700;
@@ -138,8 +147,8 @@ const MenuList = styled.div`
     font-size: 20px;
     font-weight: 400;
     color: #707070;
-    /* max-width: 527px; */
   }
+
   .content {
     display: flex;
     flex-wrap:wrap;
@@ -153,34 +162,13 @@ const MenuList = styled.div`
     background: #FFF9F1;
 
 
-    .coffeeMenu1 {
-      background-image: url(${coffeeMenu1});
+    .coffeeMenu1, .coffeeMenu2, .coffeeMenu3, .coffeeMenu4 {
       width: 280px;
       height: 222px;
       background-size: contain;
       background-repeat: no-repeat;
     }
-    .coffeeMenu2 {
-      background-image: url(${coffeeMenu2});
-      width: 280px;
-      height: 222px;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    .coffeeMenu3 {
-      background-image: url(${coffeeMenu3});
-      width: 280px;
-      height: 222px;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    .coffeeMenu4 {
-      background-image: url(${coffeeMenu4});
-      width: 280px;
-      height: 222px;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
+   
     h3 {
       font-family: Playfair Display;
       font-size: 22px;
@@ -215,6 +203,78 @@ const MenuList = styled.div`
       font-weight: 700;
     }
   }
+  `
+
+const Advantages = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 82px auto;
+    gap: 20px;
+
+  h2 {
+    font-family: Playfair Display;
+    font-size: 54px;
+    font-weight: 700;
+    color: #603809;
+  }
+
+  p {
+    font-family: Playfair Display;
+    font-size: 20px;
+    font-weight: 400;
+    color: #707070;
+  }
+
+  .advantages_content {
+    display: flex;
+    flex-wrap:wrap;
+    gap: 20px;
+
+    .advantages_card {
+      border: 1px solid #F9C06A6B;
+      max-width: 280px;
+      height: 284px;
+      text-align: center;
+      background: #FFF9F1;
+      padding: 36px 43px;
+    
+      .coffee_beans, .badge, .coffee_cup, .best_price {
+        width: 88px;
+        height: 88px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+        
+      h3 {
+        font-family: Playfair Display;
+        font-size: 22px;
+        font-weight: 700;
+        color: #603809;
+        margin: 25px auto 8px;
+      }
+  
+    }
+  }
+  .important {
+    font-family: Playfair Display;
+    font-size: 20px;
+    font-weight: 700;
+    color: #603809;
+  }
+  .button {
+    background: #F9C06A;
+    padding: 14px 27px;
+    border-radius: 24px;
+    color: #1E1E1E;
+    max-width: 135px;
+    margin: 18px auto 82px;
+    font-family: Playfair Display;
+    font-size: 16px;
+    font-weight: 700;
+    }
+  
   `
 
 const App = () => {
@@ -265,6 +325,22 @@ const App = () => {
         )}
       </div>
     </MenuList>
+    <Advantages>
+      <h2>Why are we different?</h2>
+      <p>We don’t just make your coffee, we make your day!</p>
+      <div className="advantages_content">
+        {advantages.map((el) =>
+          <div className="advantages_card" key={el.id}>
+            <img src={el.icon} alt="" />
+            <h3>{el.title}</h3>
+            <p>{el.description}</p>
+          </div>
+        )}
+      </div>
+      <p>Great ideas start with great coffee, Lets help you achieve that</p>
+      <p className="important">Get started today.</p>
+      <button className="button">Join Us</button>
+    </Advantages>
 
   </>
 
