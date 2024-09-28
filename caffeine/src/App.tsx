@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
 import styled, { createGlobalStyle } from 'styled-components'
 import img from './assets/coffeeImage.png'
 import coffee from './assets/coffeeBeans.png'
@@ -412,6 +413,15 @@ const Feedback = styled.div`
   
   
 `
+const BackgroundFooter = styled.div`
+  background-image: url(${bg_coffee});
+  width: 100%;
+  height: 574px;
+  background-size: cover;
+  background-position: center;
+  margin-top:82px;
+`
+
 const App = () => {
 
 
@@ -496,7 +506,7 @@ const App = () => {
 
       <div className="slider">
         <div className="arrow_left"><img src={left} alt="" /></div>
-        <img className = "quotes" src={quotes} alt="" />
+        <img className="quotes" src={quotes} alt="" />
         <div className="text">
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.....</p>
           <h3>Jonny Thomas</h3>
@@ -506,7 +516,9 @@ const App = () => {
         <div className="arrow_right"><img src={right} alt="" /></div>
       </div>
     </Feedback>
-
+    <BackgroundFooter>
+      <Footer />
+    </BackgroundFooter>
   </>
 
 }
