@@ -25,6 +25,7 @@ const BackgroundCoffeBeans = styled.div`
     justify-content: center;
     align-items: center;
     gap: 66px;
+    padding: 162px 2% 0;
 
     .info_text {
       display: flex;
@@ -37,7 +38,7 @@ const BackgroundCoffeBeans = styled.div`
         font-size: 54px;
         font-weight: 400;
         color: #FFFFFF;
-        margin-top: 162px;
+        /* margin-top: 162px; */
       }
 
       p {
@@ -64,7 +65,7 @@ const BackgroundCoffeBeans = styled.div`
         font-size: 26px;
         font-weight: 700;
         color: #FFFFFF;
-        margin: 162px 0 55px;
+        margin: 0 0 55px;
       }
       
       p {

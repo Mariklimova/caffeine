@@ -7,6 +7,11 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 2% 0;
     margin: auto;
+
+    @media (max-width:900px) {
+      padding: 2%;
+    }
+
     h1 {
         font-family: Clicker Script;
         font-size: 35px;

@@ -69,6 +69,10 @@ const BackgroundPreview = styled.div`
     padding: 5% 0;
     max-width: 1220px;
 
+    @media (max-width:900px) {
+      padding: 5%;
+    }
+
     p {
       font-family: Playfair Display;
       font-size: 22px;
@@ -94,14 +98,24 @@ const BackgroundPreview = styled.div`
       max-width: 134px;
     }
   }
+  /* @media (max-width:900px) {
+    .landing {
+      padding: 5%;
+    }
+  } */
   `
 const CoffeeDiscovery = styled.div`
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1180px;
-      margin: auto;
-      gap: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1180px;
+  margin: auto;
+  gap: 90px;
+
+  @media (max-width:900px) {
+  padding: 2%;
+  gap: 50px;
+  }
 
   .content {
     display: flex;
@@ -114,6 +128,7 @@ const CoffeeDiscovery = styled.div`
       font-weight: 700;
       color: #603809;
     }
+
     p {
       font-family: Playfair Display;
       font-size: 20px;
@@ -130,23 +145,39 @@ const CoffeeDiscovery = styled.div`
       color: #1E1E1E;
       max-width: 134px;
     }
-    
   }
-`
+
+  @media (max-width:900px) {
+    .img_coffee {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  `
 
 const MenuList = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin: 82px auto 0;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 82px auto 0;
+  gap: 24px;
+  
+  @media (max-width:900px) {
+    padding: 2%;
+  }
 
   h2 {
     font-family: Playfair Display;
     font-size: 54px;
     font-weight: 700;
     color: #603809;
+    text-align: center;
+
+    @media (max-width:900px) {
+      font-size: 48px;
+    }
   }
 
   p {
@@ -154,12 +185,18 @@ const MenuList = styled.div`
     font-size: 20px;
     font-weight: 400;
     color: #707070;
+    text-align: center;
   }
 
   .content {
     display: flex;
     flex-wrap:wrap;
+    justify-content: center;
     gap: 20px;
+
+    @media (max-width:1200px) {
+      gap: 50px;
+    }
   }
   .menu_card {
     border: 1px solid #F9C06A6B;
@@ -238,6 +275,7 @@ const Advantages = styled.div`
     display: flex;
     flex-wrap:wrap;
     gap: 20px;
+    justify-content: center;
 
     .advantages_card {
       border: 1px solid #F9C06A6B;
@@ -308,8 +346,11 @@ const VisitCard = styled.div`
         font-family: Playfair Display;
         font-size: 54px;
         font-weight: 700;
-         text-align: left;
         color: #FFFFFF;
+
+        @media (max-width:900px) {
+          font-size: 40px;
+        }
       }
   
       p {
@@ -335,6 +376,10 @@ const Feedback = styled.div`
   padding: 82px 153px;
   margin: auto;
   max-width: 1366px;
+
+  @media (max-width:1000px) {
+    padding: 82px 70px;
+  }
 
   h2 {
     font-family: Playfair Display;
@@ -450,9 +495,7 @@ const App = () => {
         </p>
         <button className="button">Learn More</button>
       </div>
-      <div>
-        <img src={coffee} alt="coffee" />
-      </div>
+      <img className="img_coffee" src={coffee} alt="coffee" width={500} height={484} />
     </CoffeeDiscovery>
 
     <MenuList>
