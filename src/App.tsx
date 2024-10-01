@@ -12,7 +12,6 @@ import badge from './assets/badge.svg';
 import coffee_cup from './assets/coffeeCup.svg';
 import best_price from './assets/bestPrice.svg';
 import bg_coffee from './assets/BackgroundCoffe.png';
-// import beans from './assets/coffeeBean2.png'
 import cup from './assets/cup.png';
 import quotes from './assets/quotes.svg';
 import avatar from './assets/avatar.svg';
@@ -458,7 +457,6 @@ const Feedback = styled.div`
     padding: 29px;
     width: 82px;
     top: 220px;
-    /* left: 0; */
     position: absolute;
   }
 
@@ -593,7 +591,6 @@ const App = () => {
             <button className="button">Order Now</button>
           </div>
           <div className="wrapper_img">
-            {/* <img src={beans} alt="" /> */}
             <img src={cup} alt="" />
           </div>
         </div>
