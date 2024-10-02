@@ -101,12 +101,20 @@ const BackgroundPreview = styled.div`
       padding: 5%;
     }
 
+    @media (max-width: 400px) {
+      gap: 10px;
+    }
+
     p {
       font-family: Playfair Display;
       font-size: 22px;
       font-weight: 500;
       color: #ffffff;
       max-width: 527px;
+
+      @media (max-width: 400px) {
+        font-size: 18px;
+      }
     }
 
     h1 {
@@ -117,7 +125,7 @@ const BackgroundPreview = styled.div`
       text-align: left;
       color: #ffffff;
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         font-size: 120px;
       }
     }
@@ -138,7 +146,10 @@ const CoffeeDiscovery = styled.div`
   max-width: 1180px;
   margin: auto;
   gap: 90px;
-  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
 
   @media (max-width: 900px) {
     padding: 2%;
@@ -149,6 +160,11 @@ const CoffeeDiscovery = styled.div`
     display: flex;
     flex-direction: column;
     gap: 29px;
+
+    @media (max-width: 600px) {
+      text-align: center;
+      align-items: center;
+    }
 
     h2 {
       font-family: Playfair Display;
@@ -302,6 +318,7 @@ const Advantages = styled.div`
     font-size: 54px;
     font-weight: 700;
     color: #603809;
+    text-align: center;
   }
 
   p {
@@ -309,6 +326,7 @@ const Advantages = styled.div`
     font-size: 20px;
     font-weight: 400;
     color: #707070;
+    text-align: center;
   }
 
   .advantages_content {
@@ -382,7 +400,11 @@ const VisitCard = styled.div`
     margin: 0 auto;
     padding: 5% 93px;
     max-width: 1366px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+
+    @media (max-width: 700px) {
+      flex-wrap: wrap;
+    }
 
     @media (max-width: 400px) {
       padding: 5%;
@@ -433,6 +455,10 @@ const Feedback = styled.div`
     padding: 82px 70px;
   }
 
+  @media (max-width: 500px) {
+    padding: 30px;
+  }
+
   h2 {
     font-family: Playfair Display;
     font-size: 54px;
@@ -458,14 +484,27 @@ const Feedback = styled.div`
     width: 82px;
     top: 220px;
     position: absolute;
+
+    @media (max-width: 500px) {
+      padding: 20px;
+      width: 70px;
+    }
   }
 
   .arrow_left {
     left: -50px;
+
+    @media (max-width: 500px) {
+      left: -30px;
+    }
   }
 
   .arrow_right {
     right: -50px;
+
+    @media (max-width: 500px) {
+      right: -30px;
+    }
   }
   .slider {
     border: 1px solid #f9c06a6b;
@@ -478,6 +517,13 @@ const Feedback = styled.div`
       position: absolute;
       top: 50px;
       left: 30px;
+
+      @media (max-width: 900px) {
+        width: 10%;
+        height: 10%;
+        top: 0px;
+        left: 10px;
+      }
     }
     .text {
       display: flex;
@@ -485,6 +531,10 @@ const Feedback = styled.div`
       align-items: center;
       padding: 129px 100px 101px;
       gap: 30px;
+
+      @media (max-width: 900px) {
+        padding: 50px 30px 30px;
+      }
 
       h3 {
         font-family: Playfair Display;
@@ -499,6 +549,11 @@ const Feedback = styled.div`
         font-weight: 600;
         color: #707070;
         line-height: 36px;
+
+        @media (max-width: 600px) {
+          font-size: 12px;
+          line-height: 24px;
+        }
       }
 
       .avatar {

@@ -13,6 +13,11 @@ const BackgroundFooter = styled.div`
   background-size: cover;
   background-position: center;
   margin-top: 82px;
+
+  @media (max-width: 600px) {
+    width: 0;
+    height: 0;
+  }
 `;
 const BackgroundCoffeBeans = styled.div`
   background-image: url(${bg_coffe_beans});
@@ -27,7 +32,10 @@ const BackgroundCoffeBeans = styled.div`
     align-items: center;
     gap: 66px;
     padding: 162px 2% 50px;
-    flex-wrap: wrap-reverse;
+
+    @media (max-width: 700px) {
+      flex-wrap: wrap-reverse;
+    }
 
     .info_text {
       display: flex;
