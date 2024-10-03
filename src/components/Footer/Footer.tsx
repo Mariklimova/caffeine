@@ -44,9 +44,7 @@ const BackgroundCoffeBeans = styled.div`
       gap: 20px;
 
       h1 {
-        font-family: Clicker Script;
-        font-size: 54px;
-        font-weight: 400;
+        font: 400 54px Clicker Script;
         color: #ffffff;
 
         @media (max-width: 900px) {
@@ -55,9 +53,7 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       p {
-        font-family: Playfair Display;
-        font-size: 14px;
-        font-weight: 400;
+        font: 400 14px Playfair Display;
         color: #ffffff;
         line-height: 22px;
 
@@ -70,6 +66,37 @@ const BackgroundCoffeBeans = styled.div`
       .images {
         display: flex;
         gap: 20px;
+
+        .facebook,
+        .instagram,
+        .youtube,
+        .twitter {
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        .facebook {
+          background-image: url(${facebook});
+        }
+
+        .instagram {
+          background-image: url(${instagram});
+        }
+
+        .youtube {
+          background-image: url(${youtube});
+        }
+
+        .twitter {
+          background-image: url(${twitter});
+        }
       }
     }
 
@@ -83,9 +110,7 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       h2 {
-        font-family: Playfair Display;
-        font-size: 26px;
-        font-weight: 700;
+        font: 700 26px Playfair Display;
         color: #ffffff;
         margin: 0 0 55px;
 
@@ -96,9 +121,7 @@ const BackgroundCoffeBeans = styled.div`
       }
 
       p {
-        font-family: Playfair Display;
-        font-size: 18px;
-        font-weight: 400;
+        font: 400 18px Playfair Display;
         color: #ffffff;
 
         @media (max-width: 900px) {
@@ -140,10 +163,10 @@ const Footer = () => {
               since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
             <div className="images">
-              <img className="facebook" src={facebook} alt="facebook" />
-              <img className="instagram" src={instagram} alt="instagram" />
-              <img className="youtube" src={youtube} alt="youtube" />
-              <img className="twitter" src={twitter} alt="twitter" />
+              <div className="facebook"></div>
+              <div className="instagram"></div>
+              <div className="youtube"></div>
+              <div className="twitter"></div>
             </div>
           </div>
           <div className="info_menu">

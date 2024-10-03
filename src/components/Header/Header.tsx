@@ -14,9 +14,7 @@ const Wrapper = styled.div`
   }
 
   h1 {
-    font-family: Clicker Script;
-    font-size: 35px;
-    font-weight: 400;
+    font: 400 35px Clicker Script;
     color: #ffffff;
   }
 
@@ -47,6 +45,7 @@ const Wrapper = styled.div`
   .navigation {
     display: flex;
     gap: 60px;
+    cursor: pointer;
 
     @media (max-width: 900px) {
       gap: 30px;
