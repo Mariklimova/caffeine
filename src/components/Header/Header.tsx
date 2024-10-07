@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import right from './assets/icons-drop-down.jpg';
+// import right from './assets/icons-drop-down.jpg';
 import { useState } from 'react';
 
 const Wrapper = styled.div`
@@ -69,73 +69,94 @@ const Wrapper = styled.div`
     }
   }
 
-  .drop_btn {
+  ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+  }
+
+  .drop_menu {
     display: none;
-    /* display: flex; */
     flex-direction: column;
     cursor: pointer;
-    background-color: #f9c06a;
-    padding: 16px;
-    border-radius: 24px;
 
-    .dropdown-content {
-      display: none;
+    div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 700px) {
+      display: flex;
+    }
+  }
+
+  .menu {
+    display: flex;
+    /* gap: 60px; */
+
+    @media (max-width: 700px) {
+      display: ${props => (props.isOpen ? 'flex' : 'none')};
+      flex-direction: column;
       position: absolute;
-      right: 0;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-
-      .dropdown-content p {
-        color: black;
-        padding: 12px 16px;
-        display: block;
-
-        .dropdown-content p:hover {
-          background-color: #f1f1f1;
-        }
-      }
-
-      /* .dropdown:hover .dropdown-content {display: block;}
-    .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+      top: 70px;
+      /* background-color: #333;  */
+      background-color: #f9c06a;
+      width: 100%;
+      left: 0;
+      padding: 20px 0;
     }
   }
 `;
+
+//       /* .dropdown-content {
+//         display: none;
+//         position: absolute;
+//         right: 0;
+//         background-color: #f9f9f9;
+//         min-width: 160px;
+//         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+//         z-index: 1;
+
+//         /* .dropdown-content p {
+//           color: black;
+//           padding: 12px 16px;
+//           display: block;
+//         } */
+//       /* }  */
+//     /* } */
+
 const Header = () => {
   const nav: string[] = ['Home', 'Menu', 'About Us', 'Contact Us'];
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <>
-      <Wrapper>
-        <h1>Caffeine</h1>
-        <button className="drop_btn" onClick={toggleMenu}>
-          <img src={right} alt="" width={40} height={20} color="#f9c06a" />
-          <div className="dropdown-content">
-            {nav.map((el, i) => (
-              <p key={i}>{el}</p>
-            ))}
-          </div>
-        </button>
-
-        <div className="navigation">
-          {nav.map((el, i) => (
-            <p key={i}>{el}</p>
+    <Wrapper isOpen={isOpen}>
+      <h1>Caffeine</h1>
+      <div className="drop_menu" onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
+      </div>
+      <div className="navigation">
+        <ul className={`menu ${isOpen ? 'active' : ''}`}>
+          {nav.map(el => (
+            <li key={el}>
+              <p>{el}</p>
+            </li>
           ))}
-        </div>
-
-        <div className="container">
-          <button>Sign In</button>
-          <button className="btn_active">Sign Up</button>
-        </div>
-      </Wrapper>
-    </>
+        </ul>
+      </div>
+      <div className="container">
+        <button>Sign In</button>
+        <button className="btn_active">Sign Up</button>
+      </div>
+    </Wrapper>
   );
 };
+
 export default Header;
