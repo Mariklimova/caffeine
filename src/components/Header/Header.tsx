@@ -71,8 +71,12 @@ const Wrapper = styled.div`
 
   ul {
     display: flex;
-    gap: 10px;
+    gap: 60px;
     list-style: none;
+
+    @media (max-width: 800px) {
+      gap: 40px;
+    }
   }
 
   .drop_menu {
@@ -109,23 +113,6 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-//       /* .dropdown-content {
-//         display: none;
-//         position: absolute;
-//         right: 0;
-//         background-color: #f9f9f9;
-//         min-width: 160px;
-//         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-//         z-index: 1;
-
-//         /* .dropdown-content p {
-//           color: black;
-//           padding: 12px 16px;
-//           display: block;
-//         } */
-//       /* }  */
-//     /* } */
 
 const Header = () => {
   const nav: string[] = ['Home', 'Menu', 'About Us', 'Contact Us'];

@@ -16,6 +16,7 @@ import avatar from './assets/avatar.svg';
 import left from './assets/arrowLeft.svg';
 import right from './assets/arrowRight.svg';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const coffies = [
   { id: 1, title: 'Cappuccino', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu1 },
