@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import bg_coffe_short from './assets/backgroundCoffeShort.png';
 import bg_coffe_beans from '../../components/Footer/assets/coffeBeansBackground.png';
-import facebook from '../../components/Footer/assets/facebook.svg';
-import instagram from './assets/instagram.svg';
-import youtube from './assets/youtube.svg';
-import twitter from './assets/twitter.svg';
+import facebook from '../../assets/facebook.svg';
+import instagram from '../../assets/instagram.svg';
+import youtube from '../../assets/youtube.svg';
+import twitter from '../../assets/twitter.svg';
 import { motion } from 'framer-motion';
 import { line } from 'framer-motion/client';
 
