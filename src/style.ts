@@ -70,8 +70,9 @@ const BackgroundPreview = styled.div`
       padding: 14px 27px;
       border-radius: 24px;
       color: #1e1e1e;
-      max-width: 134px;
+      max-width: 142px;
       cursor: pointer;
+      font: 700 16px Playfair Display;
     }
   }
 `;
@@ -117,8 +118,9 @@ const CoffeeDiscovery = styled.div`
       padding: 14px 27px;
       border-radius: 24px;
       color: #1e1e1e;
-      max-width: 134px;
+      max-width: 142px;
       cursor: pointer;
+      font: 700 16px Playfair Display;
     }
   }
 
@@ -349,8 +351,9 @@ const VisitCard = styled.div`
         padding: 14px 27px;
         border-radius: 24px;
         color: #1e1e1e;
-        max-width: 134px;
+        max-width: 142px;
         cursor: pointer;
+        font: 700 16px Playfair Display;
       }
     }
   }
@@ -457,6 +460,11 @@ const Feedback = styled.div`
         font-weight: 600;
         color: #707070;
         line-height: 36px;
+
+        @media (max-width: 1000px) {
+          font-size: 16px;
+          line-height: 32px;
+        }
 
         @media (max-width: 600px) {
           font-size: 12px;

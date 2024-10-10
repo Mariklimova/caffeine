@@ -1,8 +1,12 @@
-import styled from 'styled-components';
-// import right from './assets/icons-drop-down.jpg';
 import { useState } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  open: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   max-width: 1220px;
   display: flex;
   justify-content: space-between;
@@ -15,7 +19,7 @@ const Wrapper = styled.div`
     padding: 2%;
   }
 
-  h1 {
+  h2 {
     font: 400 35px Clicker Script;
     color: #ffffff;
   }
@@ -37,6 +41,7 @@ const Wrapper = styled.div`
     border-radius: 24px;
     color: #1e1e1e;
     cursor: pointer;
+    font: 500 14px Playfair Display;
 
     @media (max-width: 400px) {
       padding: 7px 14px;
@@ -57,7 +62,6 @@ const Wrapper = styled.div`
 
   .navigation {
     display: flex;
-    /* display:none; */
     gap: 60px;
     cursor: pointer;
 
@@ -73,9 +77,10 @@ const Wrapper = styled.div`
     display: flex;
     gap: 60px;
     list-style: none;
+    padding: 0;
 
     @media (max-width: 800px) {
-      gap: 40px;
+      gap: 30px;
     }
   }
 
@@ -98,18 +103,30 @@ const Wrapper = styled.div`
 
   .menu {
     display: flex;
-    /* gap: 60px; */
+    align-items: center;
 
     @media (max-width: 700px) {
-      display: ${props => (props.isOpen ? 'flex' : 'none')};
+      display: ${props => (props.open ? 'flex' : 'none')};
       flex-direction: column;
       position: absolute;
-      top: 70px;
-      /* background-color: #333;  */
+      top: 60px;
       background-color: #f9c06a;
-      width: 100%;
-      left: 0;
+      border-radius: 20px;
+      opacity: 90%;
+      width: 30%;
+      left: 110px;
       padding: 20px 0;
+      text-align: center;
+
+      li {
+        &:hover {
+          background-color: #f7a11f;
+          border-radius: 20px;
+          width: 100%;
+          padding: 15px 0;
+          margin: 0;
+        }
+      }
     }
   }
 `;
@@ -119,11 +136,15 @@ const Header = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <Wrapper isOpen={isOpen}>
-      <h1>Caffeine</h1>
+    <Wrapper open={isOpen}>
+      <motion.h2 initial={{ x: -100 }} animate={{ x: 0 }} transition={{ duration: 2 }}>
+        Caffeine
+      </motion.h2>
       <div className="drop_menu" onClick={toggleMenu}>
         <div />
         <div />
@@ -140,7 +161,9 @@ const Header = () => {
       </div>
       <div className="container">
         <button>Sign In</button>
-        <button className="btn_active">Sign Up</button>
+        <motion.button whileHover={{ scale: 1.1, backgroundColor: '#f7a11f' }} className="btn_active">
+          Sign Up
+        </motion.button>
       </div>
     </Wrapper>
   );

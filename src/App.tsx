@@ -38,21 +38,25 @@ const sliderObj = [
     name: `Jonny Thomas`,
     profession: `Project Manager`,
   },
+
   {
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis enim doloremque perspiciatis nostrum inventore consequuntur dicta exercitationem! Optio debitis maxime explicabo ab ad, fugiat voluptas?`,
     name: `Jon Smith`,
     profession: `Front`,
   },
+
   {
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis soluta nam quia minima, fugiat totam ratione distinctio voluptatum iure consequatur quisquam dicta alias reiciendis placeat harum architecto neque cum pariatur.`,
     name: `Anton`,
     profession: `Dev`,
   },
+
   {
     description: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam dolorem officia veniam dolor nobis voluptates necessitatibus vero, porro nulla labore.`,
     name: `Jonny Thomas`,
     profession: `HR`,
   },
+
   {
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci harum, tempora perferendis amet delectus?`,
     name: `Thomas`,
@@ -79,15 +83,17 @@ const App = () => {
       <Global />
       <BackgroundPreview>
         <Header />
-        <div className="landing">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 3 }} className="landing">
           <p>We’ve got your morning covered with</p>
           <h1>Coffee</h1>
           <p>
             It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We provide the best for our
             customers.
           </p>
-          <button className="button">Order Now</button>
-        </div>
+          <motion.button whileHover={{ scale: 1.1, backgroundColor: '#f7a11f' }} className="button">
+            Order Now
+          </motion.button>
+        </motion.div>
       </BackgroundPreview>
 
       <CoffeeDiscovery>
@@ -98,7 +104,9 @@ const App = () => {
             cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you
             have ever tasted.
           </p>
-          <button className="button">Learn More</button>
+          <motion.button whileHover={{ scale: 1.1, backgroundColor: '#f7a11f' }} className="button">
+            Learn More
+          </motion.button>
         </div>
         <img className="img_coffee" src={coffee} alt="coffee" width={500} height={484} />
       </CoffeeDiscovery>
@@ -132,17 +140,21 @@ const App = () => {
         </div>
         <p>Great ideas start with great coffee, Lets help you achieve that</p>
         <p className="important">Get started today.</p>
-        <button className="button">Join Us</button>
+        <motion.button whileHover={{ scale: 1.1, backgroundColor: '#f7a11f' }} className="button">
+          Join Us
+        </motion.button>
       </Advantages>
       <VisitCard>
         <div className="wrapper_visit_card">
           <div className="info">
             <h2>Get a chance to have an Amazing morning</h2>
             <p>We are giving you are one time opportunity to experience a better life with coffee.</p>
-            <button className="button">Order Now</button>
+            <motion.button whileHover={{ scale: 1.1, backgroundColor: '#f7a11f' }} className="button">
+              Order Now
+            </motion.button>
           </div>
           <div className="wrapper_img">
-            <img src={cup} alt="" />
+            <motion.img src={cup} alt="cup" initial={{ x: 100 }} whileInView={{ x: 0 }} transition={{ duration: 1 }} />
           </div>
         </div>
       </VisitCard>
@@ -155,7 +167,15 @@ const App = () => {
           <div className="arrow_left">
             <img src={left} alt="" onClick={() => nextSlide()} />
           </div>
-          <img className="quotes" src={quotes} alt="" />
+          <motion.img
+            initial={{ rotate: 0 }}
+            whileInView={{ rotate: 360 }}
+            transition={{ duration: 3 }}
+            viewport={{ once: true }}
+            className="quotes"
+            src={quotes}
+            alt="quotes"
+          />
           <div className="text">
             <p>{sliderObj[count].description}</p>
             <h3>{sliderObj[count].name}</h3>

@@ -5,6 +5,8 @@ import facebook from './assets/facebook.svg';
 import instagram from './assets/instagram.svg';
 import youtube from './assets/youtube.svg';
 import twitter from './assets/twitter.svg';
+import { motion } from 'framer-motion';
+import { line } from 'framer-motion/client';
 
 const BackgroundFooter = styled.div`
   background-image: url(${bg_coffe_short});
@@ -77,9 +79,9 @@ const BackgroundCoffeBeans = styled.div`
           background-size: contain;
           background-repeat: no-repeat;
 
-          &:hover {
+          /* &:hover {
             transform: scale(1.1);
-          }
+          } */
         }
 
         .facebook {
@@ -163,10 +165,17 @@ const Footer = () => {
               since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
             <div className="images">
-              <div className="facebook"></div>
-              <div className="instagram"></div>
-              <div className="youtube"></div>
-              <div className="twitter"></div>
+              <motion.div whileHover={{ scale: 1.2 }} className="facebook"></motion.div>
+              <motion.div whileHover={{ scale: 1.2 }} className="instagram"></motion.div>
+              <motion.div whileHover={{ scale: 1.2 }} className="youtube"></motion.div>
+              <motion.div
+                initial={{ x: -100, y: 100 }}
+                whileInView={{ x: 0, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.2, transition: line }}
+                className="twitter"
+              ></motion.div>
             </div>
           </div>
           <div className="info_menu">
