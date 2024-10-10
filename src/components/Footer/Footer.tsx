@@ -78,27 +78,23 @@ const BackgroundCoffeBeans = styled.div`
           height: 24px;
           background-size: contain;
           background-repeat: no-repeat;
-
-          /* &:hover {
-            transform: scale(1.1);
-          } */
         }
 
-        .facebook {
+        /* .facebook {
           background-image: url(${facebook});
-        }
+        } */
 
-        .instagram {
+        /* .instagram {
           background-image: url(${instagram});
-        }
+        } */
 
-        .youtube {
+        /* .youtube {
           background-image: url(${youtube});
-        }
+        } */
 
-        .twitter {
+        /* .twitter {
           background-image: url(${twitter});
-        }
+        } */
       }
     }
 
@@ -165,17 +161,19 @@ const Footer = () => {
               since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
             <div className="images">
-              <motion.div whileHover={{ scale: 1.2 }} className="facebook"></motion.div>
-              <motion.div whileHover={{ scale: 1.2 }} className="instagram"></motion.div>
-              <motion.div whileHover={{ scale: 1.2 }} className="youtube"></motion.div>
-              <motion.div
+              <motion.img src={facebook} alt="" whileHover={{ scale: 1.2 }} className="facebook" />
+              <motion.img src={instagram} alt="" whileHover={{ scale: 1.2 }} className="instagram" />
+              <motion.img src={youtube} alt="" whileHover={{ scale: 1.2 }} className="youtube" />
+              <motion.img
+                src={twitter}
+                alt=""
                 initial={{ x: -100, y: 100 }}
                 whileInView={{ x: 0, y: 0 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.2, transition: line }}
                 className="twitter"
-              ></motion.div>
+              />
             </div>
           </div>
           <div className="info_menu">
