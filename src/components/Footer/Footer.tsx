@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import bg_coffe_short from './assets/backgroundCoffeShort.png';
-import bg_coffe_beans from './assets/CoffeBeansBackground.png';
+import bg_coffe_beans from '../../components/Footer/assets/coffeBeansBackground.png';
 import facebook from './assets/facebook.svg';
 import instagram from './assets/instagram.svg';
 import youtube from './assets/youtube.svg';
