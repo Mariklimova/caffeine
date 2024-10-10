@@ -112,7 +112,7 @@ const Wrapper = styled.div<WrapperProps>`
       top: 60px;
       background-color: #f9c06a;
       border-radius: 20px;
-      opacity: 90%;
+      z-index: 1;
       width: 30%;
       left: 110px;
       padding: 20px 0;

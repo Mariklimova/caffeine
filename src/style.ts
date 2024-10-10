@@ -173,7 +173,7 @@ const MenuList = styled.div`
     gap: 20px;
 
     @media (max-width: 1200px) {
-      gap: 50px;
+      gap: 70px;
     }
   }
   .menu_card {
@@ -222,7 +222,7 @@ const MenuList = styled.div`
       padding: 14px 27px;
       border-radius: 24px;
       color: #1e1e1e;
-      max-width: 135px;
+      max-width: 142px;
       margin: 18px auto 82px;
       font: 700 16px Playfair Display;
       cursor: pointer;
